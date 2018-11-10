@@ -1,0 +1,47 @@
+commit Git中的“快照”
+
+======================
+
+git log
+
+显示所有提交过的版本信息
+----------
+git log --pretty=oneline, 只会显示版本号和提交时的备注信息
+
+--pretty, 非默认格式显示
+oneline, 每个提交在一行显示
+除了oneline，还有很多参数
+----------
+
+a2810b3023a626ed8dad3560c6251b0f1281eca5 (HEAD -> master, origin/master) appenddistribute and GPL
+e89ee3268bd1fb0f673761d169b990bcfa10c8c4 add a file of status
+72cb05dc6f5802cf2c925e70136864c51829dfb1 add file into repository
+592054a2877c1f57d51bea857e4171e4fd888347 add a file
+01cb8d90650ceb7857db27f8b10f8e4a4cfde15f wrote a redme file
+
+显示内容的一大串字符，是SHA1计算出的 commit id（版本号）
+HEAD表示当前版本
+前一个版本是HEAD^, 再前一个版本是HEAD^^, 往前100个是HEAD~100
+
+=======================
+
+回退到某个版本
+----------------
+git reset --hard 版本号前几个字符
+
+版本回退，是因为Git内部的指针指向改变了
+----------------
+git reflog
+
+查看所有操作记录，（包括已经被删除的 commit 记录和 reset 的操作）
+再使用 git reset 命令，就可以回退到删除的操作之前
+
+=======================
+
+小结
+	1、HEAD指向当前版本
+		回退版本，git reset --hard commit_id
+	2、查看提交历史，确定回退到哪个版本
+		git log
+	3、查看所有操作记录，返回到回退之前的版本
+		git reflog
