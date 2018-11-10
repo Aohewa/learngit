@@ -1,0 +1,30 @@
+添加并提交文件后，修改了文件
+可以用命令查看Git仓库状态
+=======================
+get status
+
+Git提示哪一个文件被修改
+---------------
+get diff file_name
+
+查看具体修改了文件的什么内容
+---------------
+=======================
+查看后，再次添加提交文件
+
+get add file_name
+
+get commit -m <注释信息>
+
+-------------------
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+说明没有需要提交的修改，工作目录是干净的
+
+--------
+小结
+
+	1、掌握工作区状态, get status
+	2、查看修改内容, get diff <file>
